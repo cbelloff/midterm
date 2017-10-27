@@ -1,0 +1,28 @@
+
+{% if result.cookie == "True" %}
+<h1>
+<b>{{result.name}} will be 100 in {{ result.result_string }} years. Start livin life!!</b>
+</h1>	
+
+<a href="{{ url_for('home_page')}}">To return to homepage to see when someone else turns 100, click here!</a>
+
+{% block content %}
+  <h3>Apply for a chance to get reconized by the TODAY Show for being at least 100 years old!</h3>
+  <form method="POST" action="http://localhost:5000/result2">
+      {{ form.hidden_tag() }}
+      
+      <p>{{ form.name.label }}{{ form.name() }}</p>
+      {{ form.submit() }}
+  </form>
+{% endblock %}
+
+
+{% for x in range(result.age) %}
+	<span>
+		<img src="static/candle2.png" alt="candle" style="float:left" width="75" height="100">
+	</span>
+	{% endfor %}
+{% else %}
+	<a href="/">You took a shortcut and went right to my form page! Re-enter your information here instead if you want your results.</a>
+{% endif %}
+

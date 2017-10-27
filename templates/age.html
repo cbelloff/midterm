@@ -1,0 +1,32 @@
+<html>
+<style type="text/css">
+	
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+	
+</style>
+<body>
+<h2>Find out how many years until you turn 100 and can get your face on a Smucker's jar!</h2>
+{% for message in get_flashed_messages() %}
+      {{ message }}
+      {% endfor %}
+<br>
+<form action="http://localhost:5000/result" method="GET">
+  Enter your name :<br>
+  <input type="text" name="name" value="">
+  <br>
+  Enter your birthday :<br>
+  <input type="date" name="birthday" value="">
+  <br>
+  Enter the current date :<br>
+  <input type="date" name="current" value="">
+  <br>
+  <input type="submit" value="Submit">
+</form>
+<br>
+
+<img src="static/jam.jpg" alt="jam" width="600" height="300" align"middle">
+</body>
+</html>
